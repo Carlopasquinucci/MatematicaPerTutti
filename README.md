@@ -13,8 +13,10 @@ Per ogni risultato corretto, l'alunno riceverà un punto. é possibile poi monit
 
 In corso di sviluppo:
 
-6.Tabelline
-7.Espressioni randomiche
+6. Tabelline
+7. Espressioni randomiche
+8. Controllo del tempo impiegato
+9. Punteggio diversificato in base alla difficoltà dell'espressione
 
 ## Istruzioni
 Scaricare la cartella contenete il file .exe e la sottocartella "giorni".

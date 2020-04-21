@@ -23,4 +23,8 @@ Scegliere l'operazione da volere effettuare.
 
 Nella cartella sorgente è comunque presenta il codice per chi volesse modificarlo e adattarlo alle sue esigenze.
 
-
+## Credits
+Programma creato da Carlo Augusto Pasquinucci
+Contacts:
+carlo.a.pasquinucci@gmail.com
+https://www.linkedin.com/in/carloaugustopasquinucci/

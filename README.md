@@ -19,7 +19,7 @@ In corso di sviluppo:
 9. Punteggio diversificato in base alla difficoltà dell'espressione
 
 ## Istruzioni
-Scaricare la cartella contenete il file .exe e la sottocartella "giorni".
+Scaricare la cartella contenete il file .exe.
 Cliccare una volta sul file .exe.
 Scegliere l'operazione da volere effettuare.
 

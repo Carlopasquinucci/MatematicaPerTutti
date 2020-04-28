@@ -11,6 +11,8 @@ Per ora sono presenti:
 
 Per ogni risultato corretto, l'alunno riceverà un punto. é possibile poi monitorare nel corso del tempo i miglioramenti attraverso dei grafici generati con i dati giornalieri.
 
+![Result](https://user-images.githubusercontent.com/54579322/80516355-a169ad80-8983-11ea-836b-24665a8bff02.png)
+
 In corso di sviluppo:
 
 6. Tabelline

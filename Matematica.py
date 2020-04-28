@@ -79,7 +79,6 @@ def sommmaesottrazione():
 			response = pymsgbox.prompt(stringa)
 			continua=risultato(c, response)
 		
- 
 def moltiplicazione():
 	naddendi=randint(2,2)
 	lista=[]
@@ -95,6 +94,7 @@ def moltiplicazione():
 	while continua:
 			response = pymsgbox.prompt(stringa)
 			continua=risultato(c, response)
+			
 def divisioneconvirgola():
 #esegue la divisione, il risultato è un numero decimale. Se intero, scrive il numero seguito da ".0"
 	a=randint(0,10)
@@ -104,6 +104,7 @@ def divisioneconvirgola():
 	while continua:
 		response = pymsgbox.prompt('Quanto fa '+str(b)+'/'+str(a)+'?')
 		continua=risultato(c, response)
+		
 def divisioneintero():
 #esegue la divisione avendo come risultato sempre un numero intero.
 #un termine della moltiplicazione può essere maggiore di 10.
@@ -115,6 +116,105 @@ def divisioneintero():
 		response = pymsgbox.prompt('Quanto fa '+str(a)+'/'+str(b)+'?')
 		continua=risultato(c, response)
 		
+
+def trovaoperazioni():
+#Quale operazione è stata fatta?
+	operazione=randint(0,2) #0 somma, 1 sottrazione , 2 moltiplicazione 
+	a=randint(1,10)
+	b=randint(1,a)
+	if operazione==0:
+		d=a+b
+		c='+'
+	elif operazione==1:
+		d=a-b
+		c='-'
+	elif operazione==2:	
+		d=a*b
+		c='x'
+	stringa= str(a)+'    ......    '+str(b)+'='+str(d) +' Quale operazione è stata eseguita? "+", "-" o "x"?'
+	
+	continua=True
+	while continua:
+			response = pymsgbox.prompt(stringa)
+			continua=risultato(c, response)
+	
+def confronto():
+	a=randint(0,40)
+	b=randint(0,40)
+	test=randint(0,1) #0 cerca il maggiore, 1 cerca il minore
+	c="Vero"
+	if test==0:
+		stringa=' > '
+		if a<=b:
+			c='Falso'
+	else:
+		stringa=' < '
+		if a>=b:
+			c='Falso'
+		
+	continua=True
+	while continua:
+		response = pymsgbox.prompt(str(a)+stringa+str(b)+'. Vero o Falso?')
+		continua=risultato(c, response)
+		
+def numsuccessivo():
+	a=randint(0,40)
+	c="Vero"
+	if a<=b:
+		c="Falso"
+	
+	continua=True
+	while continua:
+		response = pymsgbox.prompt(str(a)+' > '+str(b)+'?')
+		continua=risultato(c, response)
+		
+def numprecosuccess():  #numero precedente o successivo?
+	a=randint(0,40)
+	test=randint(0,1) #0 sucessivo, 1 precedente
+	c=a+1
+	stringa=" dopo di "
+	if test==1:
+			c=a-1
+	stringa=" prima di "
+	continua=True
+	while continua:
+		response = pymsgbox.prompt('Quale numero viene'+stringa+str(a)+' ?')
+		continua=risultato(c, response)
+	
+def completalaserie():  #inserisci il numero successivo
+	"""
+	numerodipassi=randint(1,3)
+	listpasso2=list()
+	listaa=list()
+	a=randint(0,5)
+	print(a)
+	listaa.append(a)
+	stringa='Completa la serie: '
+	for i in range(0,numerodipassi):
+		stringa=stringa+str(a)+"; "
+		passo2=randint(-5,5)
+		a=a+passo2
+		listpasso2.append(passo2)
+		listaa.append(a)
+
+
+	print(stringa)
+	print(listpasso2)
+	print(listaa)
+	c=listaa[numerodipassi]
+	print(c)
+	"""
+	
+	passo=randint(0,5)
+	a=randint(-5,5)
+	b=a+passo
+	d=b+passo
+	c=d+passo
+	continua=True
+	while continua:
+		response = pymsgbox.prompt('Completa la serie: '+str(a)+'; '+str(b)+'; '+str(d)+'; ...')
+		continua=risultato(c, response)
+	
 """		
 def equazioni2grado():
 
@@ -182,24 +282,7 @@ def statistiche():
 	
 
 	plt.savefig("statistica/Result.png", dpi=150, transparent=False)
-	plt.show()	
-	"""
-	plt.bar(x_pos, listasomme, align='center')
-	plt.xticks(x_pos, fgiorni)
-	plt.ylabel('Risultati corretti')
-	plt.xlabel('Giorni')
-	plt.title('Risultati per giorno')
 	plt.show()
-	
-	plt.bar(x_pos, listapercent, align='center')
-	plt.xticks(x_pos, fgiorni)
-	plt.ylabel('Rapporto risutlati corretti/tentativi')
-	plt.xlabel('Giorni')
-	plt.title('Risultati per giorno')
-	
-	plt.show()
-	"""
-	
 
 	
 def help():
@@ -233,6 +316,19 @@ commandhelp = tk.Button(frame,
 				   fg="blue",
                    command=help)
 commandhelp.pack(side=tk.LEFT)
+
+
+statistiche = tk.Button(frame,
+                   text="Statistiche utilizzo",
+				   fg="red",
+                   command=statistiche)
+statistiche.pack(side=tk.RIGHT)
+
+
+
+
+
+
 """
 button = tk.Button(frame, 
                    text="ESCI", 
@@ -265,15 +361,35 @@ commanddivisione2 = tk.Button(frame,
                    command=divisioneintero)
 commanddivisione2.pack(side=tk.RIGHT)
 
-statistiche = tk.Button(frame,
-                   text="Statistiche utilizzo",
-                   command=statistiche)
-statistiche.pack(side=tk.LEFT)
+
+confronto = tk.Button(frame,
+                   text="Confronto fra numeri",
+                   command=confronto)
+confronto.pack(side=tk.RIGHT)
+
 
 sommmaesottrazione = tk.Button(frame,
-                   text="Espressioni con somma e sottrazioni",
+                   text="Espressioni con somme e sottrazioni",
                    command=sommmaesottrazione)
 sommmaesottrazione.pack(side=tk.LEFT)
+
+
+numprecosuccess=tk.Button(frame,
+                   text="Precedente o successivo",
+                   command=numprecosuccess)
+numprecosuccess.pack(side=tk.LEFT)
+
+
+completalaserie=tk.Button(frame,
+                   text="Completa la serie",
+                   command=completalaserie)
+completalaserie.pack(side=tk.LEFT)
+
+trovaoperazionic=tk.Button(frame,
+                   text="Trova l'operazione effettuata",
+                   command=trovaoperazioni)
+trovaoperazionic.pack(side=tk.LEFT)
+
 """
 commandeq2grd = tk.Button(frame,
                    text="Divisione con risultato intero",

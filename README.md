@@ -37,6 +37,9 @@ Nella cartella sorgente è comunque presenta il codice per chi volesse modificar
 
 ## Credits
 Programma creato da Carlo Augusto Pasquinucci
+
 Contacts:
+
 carlo.a.pasquinucci(at)gmail.com
+
 https://www.linkedin.com/in/carloaugustopasquinucci/
